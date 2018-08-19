@@ -5,5 +5,18 @@
   "main": "index.js",
   "author": "Jem Bezooyen <jem@hipmedia.ca>",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "scripts": {
+    "tsc": "tsc",
+    "prettier": "prettier",
+    "test": "jest"
+  },
+  "dependencies": {
+    "concurrently": "^3.6.1",
+    "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2"
+  }
 }

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 // For now we'll just travel to the root directory of this project
 console.log('~/Sites/misc/navi/')

@@ -1,0 +1,9 @@
+{
+  "name": "navi",
+  "version": "0.0.1",
+  "description": "Quick utility for jumping paths quickly in the shell",
+  "main": "index.js",
+  "author": "Jem Bezooyen <jem@hipmedia.ca>",
+  "license": "UNLICENSED",
+  "private": true
+}

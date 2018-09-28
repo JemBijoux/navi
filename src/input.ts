@@ -1,19 +1,18 @@
 import yargs from 'yargs'
 import { Argv } from 'yargs'
-import * as myModule from './exModule'
+import * as bookmark from './bookmark'
 import * as goTo from './goTo'
 
 const argv = yargs
   .scriptName('navi')
-  .usage('Usage: $0 [command] [name] \n e.g $0 add home')
+  .usage('Usage: $0 <command> <name> \n e.g $0 add home')
   .alias('v', 'version')
   .alias('h', 'help')
-  .command(myModule)
+  .command(bookmark)
   .command(goTo)
   .help('h')
   .argv
-  // .command('add <name>', 'add a bookmark to this location')
-  // .command('fzf', 'use a fuzzy finder to find your way')
-  // .command('go <name>', 'go to a named bookmark').argv
 
+// If you print the following then you're going to see the output of everything
+// going on above
 console.log('args', argv)

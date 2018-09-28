@@ -7,9 +7,9 @@
   "license": "UNLICENSED",
   "private": true,
   "bin": {
-     "navi": "./dist/input.js",
-     "navi-input": "./dist/input.js",
-     "navi-output": "./dist/output.js"
+    "navi": "./dist/input.js",
+    "navi-input": "./dist/input.js",
+    "navi-output": "./dist/output.js"
   },
   "scripts": {
     "tsc": "tsc",
@@ -20,8 +20,10 @@
     "postinstall": "yarn run tsc"
   },
   "dependencies": {
-    "@types/yargs": "^11.1.1",
+    "@types/inquirer": "^0.0.43",
+    "@types/yargs": "^12.0.0",
     "concurrently": "^3.6.1",
+    "inquirer": "^6.2.0",
     "typescript": "^3.0.1",
     "yargs": "^12.0.1"
   },

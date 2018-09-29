@@ -1,18 +1,28 @@
-import yargs from 'yargs'
-import { Argv } from 'yargs'
-import * as bookmark from './bookmark'
-import * as goTo from './goTo'
+import yargs, {Argv} from 'yargs';
 
-const argv = yargs
-  .scriptName('navi')
-  .usage('Usage: $0 <command> <name> \n e.g $0 add home')
-  .alias('v', 'version')
-  .alias('h', 'help')
-  .command(bookmark)
-  .command(goTo)
-  .help('h')
-  .argv
+import loadConfig from './loadConfig'
+import loadStore from './loadStore'
 
-// If you print the following then you're going to see the output of everything
-// going on above
-console.log('args', argv)
+import * as bookmark from './bookmark';
+import * as goTo from './goTo';
+
+export const moduleName = 'navi';
+
+(async () => {
+
+  const config = await loadConfig()
+  const store = await loadStore(config.store)
+
+  // console.log('And we got this config loaded', config)
+  console.log('And we got this store loaded', store)
+
+  const argv = yargs
+    .scriptName(moduleName)
+    .usage("Usage: $0 <command> <name> \n e.g $0 add home")
+    .alias('v', 'version')
+    .alias('h', 'help')
+    .command(bookmark)
+    .command(goTo)
+    .help('h').argv;
+})()
+

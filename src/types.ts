@@ -1,8 +1,8 @@
 export interface Configuration {
-  store: string
+  store: string;
   feature: {
-    [key: string]: boolean
-  }
+    [key: string]: boolean;
+  };
 }
 
 /*
@@ -12,14 +12,14 @@ export interface Configuration {
 
 */
 export interface Gate {
-  name: string
-  absPath: string
+  name: string;
+  absPath: string;
 }
 
 export interface GateMap {
-  [key:string]: Gate
+  [key: string]: Gate;
 }
 
 export interface InitialState {
-  gates: {} | GateMap
+  gates: {} | GateMap;
 }

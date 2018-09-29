@@ -16,7 +16,7 @@ const readFileAsync = util.promisify(fs.readFile);
 
 export default async (storeFileName: string): Promise<any> => {
   const absPath = `${os.homedir()}${path.sep}${storeFileName}`;
-  let store = {...initialState};
+  let store = { ...initialState };
   try {
     const storeFile = await readFileAsync(absPath);
     store = JSON.parse(storeFile.toString());
@@ -30,7 +30,7 @@ export default async (storeFileName: string): Promise<any> => {
       // therefore we show more of the full error to the user.
       console.error('Failed to load store:', err);
     }
-    store = {...initialState};
+    store = { ...initialState };
   }
   return store;
 };

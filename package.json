@@ -13,11 +13,16 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "prettier": "prettier",
+    "prettier": "prettier --parser typescript --write \"./src/**/*.ts\"",
+    "lint:prettier": "prettier --parser typescript --list-different \"./src/**/*.ts\"",
     "input": "node ./dist/input.js",
     "output": "node ./dist/output.js",
     "test": "jest",
     "postinstall": "yarn run tsc"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "dependencies": {
     "@types/cosmiconfig": "^5.0.3",

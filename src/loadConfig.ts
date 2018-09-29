@@ -1,7 +1,7 @@
-import cosmiconfig, {Config} from 'cosmiconfig';
+import cosmiconfig, { Config } from 'cosmiconfig';
 const moduleName = 'navi';
 const explorer = cosmiconfig(moduleName);
-import {Configuration} from './types';
+import { Configuration } from './types';
 import defaultConfig from './defaultConfig';
 
 /*

@@ -1,6 +1,5 @@
-
 // For now we'll just travel to the root directory of this project
-console.log('~/Sites/misc/navi/')
+console.log('~/Sites/misc/navi/');
 
 /*
 
@@ -14,5 +13,3 @@ function navi () {
 }
 
 */
-
-

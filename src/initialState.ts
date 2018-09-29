@@ -1,7 +1,7 @@
-import { InitialState } from './types'
+import { InitialState } from './types';
 
-const initialState:InitialState = {
+const initialState: InitialState = {
   gates: {},
-}
+};
 
-export default initialState
+export default initialState;

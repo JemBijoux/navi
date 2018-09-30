@@ -1,4 +1,4 @@
-import { Configuration } from './types';
+import { Configuration } from '../types';
 
 const defaultConfig: Configuration = {
   store: '.navi-store.json', // file in the home directory, OR an absolute path

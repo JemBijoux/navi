@@ -5,6 +5,10 @@ export interface Configuration {
   };
 }
 
+export interface Store {
+  readonly gates: GateMap;
+}
+
 /*
   A "gate" is like a bookmark,
   you have a name and it resolves to a location, so that at any time you can 
@@ -17,9 +21,5 @@ export interface Gate {
 }
 
 export interface GateMap {
-  [key: string]: Gate;
-}
-
-export interface InitialState {
-  gates: {} | GateMap;
+  readonly [key: string]: Gate;
 }

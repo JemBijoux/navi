@@ -6,6 +6,10 @@ export interface Configuration {
 }
 
 export interface Store {
+  readonly went: {
+    readonly to: undefined | string;
+    readonly from: undefined | string;
+  };
   readonly gates: GateMap;
 }
 

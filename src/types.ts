@@ -5,6 +5,15 @@ export interface Configuration {
   };
 }
 
+// Based on http://tldp.org/LDP/abs/html/exitcodes.html
+// and the fact that TS enums resolve to integers (0 based) by default
+export enum ExitCodes {
+  Success, // Default if no other exit code is set
+  Error,  // Catchall for general errors
+  ShellBuiltin, // Misuse of shell builtins (according to Bash documentation)
+  ChangeDirectory,
+}
+
 export interface Store {
   readonly went: {
     readonly to: undefined | string;

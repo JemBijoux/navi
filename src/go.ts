@@ -1,7 +1,7 @@
 import yargs, { Argv } from 'yargs';
 import process from 'process';
-import { getStore, updateStore } from './global/store';
-import { Gate } from './types';
+import { getStore, updateStore, saveStoreFile } from './global/store';
+import { Gate, ExitCodes } from './types';
 
 export const command = 'go <name>';
 export const describe = 'Change to the named destination';
@@ -18,7 +18,12 @@ export const handler = (argv: Argv) => {
   console.log(message);
 
   const to = destination !== undefined ? destination.absPath : '';
+  console.log('we are going to go to', to)
   const went = { to, from };
 
-  updateStore({ gates, went });
+  const newStore = { gates, went }
+  updateStore(newStore);
+
+  // Signal to following navi call that we are ready to change directory
+  process.exitCode = ExitCodes.ChangeDirectory
 };

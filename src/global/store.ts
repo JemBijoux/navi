@@ -62,6 +62,7 @@ export const saveRequired = () => !_.isEqual(LOADED_STORE, UPDATED_STORE);
 
 export const saveStoreFile = async (): Promise<any> => {
   const config = getConfig();
+  console.log("The config we're saving is", config)
   const absPath = `${os.homedir()}${path.sep}${config.store}`;
   try {
     console.log('Saving update to our store:', config.store);

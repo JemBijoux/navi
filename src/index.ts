@@ -1,15 +1,28 @@
-// For now we'll just travel to the root directory of this project
-console.log('~/Sites/misc/navi/');
+import yargs, { Argv } from 'yargs';
 
-/*
+import * as add from './add';
+import * as goTo from './go';
 
-Then I add the following to the .zshrc to trigger the function
-and travel over to wherever this function spits out
+import { loadSettingsAndConfig, closeStore } from './global';
+export const moduleName = 'navi';
 
-function navi () {
-  PATHTOVISIT=$(/Users/jem/Sites/misc/navi/index.js)
-  PREVIOUS_DIR=$(pwd)
-  eval "cd $PATHTOVISIT"
-}
+const injectStore = (argv: any) => {
+  console.log('middleware');
+  return { added: 'ok' };
+};
 
-*/
+(async () => {
+  const store = await loadSettingsAndConfig();
+
+  const argv = yargs
+    .scriptName(moduleName)
+    .usage('Usage: $0 <command> <name> \n e.g $0 add home')
+    .alias('v', 'version')
+    .alias('h', 'help')
+    .command(add)
+    .command(goTo)
+    .help('h')
+    .middleware((x: any) => console.log('ye', x)).argv;
+
+  await closeStore();
+})();

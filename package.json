@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "private": true,
   "bin": {
-    "navi": "./dist/input.js",
+    "navi": "./dist/install.js",
     "navi-input": "./dist/input.js",
     "navi-output": "./dist/output.js"
   },

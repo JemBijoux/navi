@@ -8,6 +8,7 @@ export const loadSettingsAndConfig = async () => {
 };
 
 export const closeStore = async () => {
-  if (saveRequired()) await saveStoreFile();
+  await saveStoreFile()
+  // if (saveRequired()) ;
   // else... nothing changed, no reason to write to disk
 };
